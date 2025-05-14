@@ -1,13 +1,46 @@
-body {
+/* src/index.css hoặc src/App.css hoặc một tệp CSS toàn cục bạn đã import */
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family nên được giữ lại hoặc tùy chỉnh theo ý bạn */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f4f8; /* Màu nền nhẹ cho trang, tùy chọn */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Keyframes cho Toast animation (phiên bản bạn cung cấp, đã cập nhật với translateY) */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(20px) translateY(10px); /* Bắt đầu từ phải và hơi dịch xuống */
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(0) translateY(0); /* Về vị trí chính */
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(0) translateY(0); /* Giữ nguyên vị trí */
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20px) translateY(10px); /* Kết thúc về lại phải và hơi dịch xuống */
+  }
+}
+
+/* Container chính của ứng dụng (tùy chọn, để căn giữa nội dung) */
+#root { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px; /* Khoảng đệm phía trên */
+  min-height: 100vh;
 }
